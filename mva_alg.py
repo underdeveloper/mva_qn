@@ -22,8 +22,8 @@ def mva(k: int, mu: float):
         t_3 = (1/(1*mu))*(1+n_3)
 
         n_1 = i * (l_hat_1*t_1)/(l_hat_1*t_1 + l_hat_2*t_2 + l_hat_3*t_3)
-        n_2 = i * (l_hat_1*t_1)/(l_hat_1*t_1 + l_hat_2*t_2 + l_hat_3*t_3)
-        n_3 = i * (l_hat_1*t_1)/(l_hat_1*t_1 + l_hat_2*t_2 + l_hat_3*t_3)
+        n_2 = i * (l_hat_2*t_2)/(l_hat_1*t_1 + l_hat_2*t_2 + l_hat_3*t_3)
+        n_3 = i * (l_hat_3*t_3)/(l_hat_1*t_1 + l_hat_2*t_2 + l_hat_3*t_3)
 
         l_1 = n_1/t_1
         l_2 = n_2/t_2
@@ -32,9 +32,9 @@ def mva(k: int, mu: float):
         i += 1
 
     return print("""For k = {k},\n
-l_1 = {l_1}\n
-l_2 = {l_2}\n
-l_3 = {l_3}""".format(k=k, l_1=l_1, l_2=l_2, l_3=l_3))
+l_1 = {l_1}, n_1 = {n_1}, t_1 = {t_1}\n
+l_2 = {l_2}, n_2 = {n_2}, t_2 = {t_2}\n
+l_3 = {l_3}, n_3 = {n_3}, t_3 = {t_3}""".format(k=k, l_1=l_1, l_2=l_2, l_3=l_3, n_1=n_1, n_2=n_2, n_3=n_3, t_1=t_1, t_2=t_2, t_3=t_3))
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
