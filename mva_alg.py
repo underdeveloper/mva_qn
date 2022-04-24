@@ -5,7 +5,7 @@ def mva(k: int, mu: float):
     # mu: Base value for service rate mu_m
     if k == 0:
         return print("Error, number of users must be at least 1.")
-    i = 0
+    i = 1
     # Queue 1
     n_1 = 0
     l_hat_1 = 4
@@ -15,8 +15,6 @@ def mva(k: int, mu: float):
     # Queue 3
     n_3 = 0
     l_hat_3 = 3
-
-    i += 1
 
     while i <= k:
         t_1 = (1/(3*mu))*(1+n_1)
@@ -44,7 +42,7 @@ if __name__ == "__main__":
     else:
         try:
             k = int(sys.argv[1])
-            mu = int(sys.argv[2])
+            mu = float(sys.argv[2])
 
             print('Entered numbers: k = ' + str(k) + ', mu = ' + str(mu))
             mva(k, mu)
